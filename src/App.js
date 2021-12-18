@@ -27,10 +27,10 @@ function App() {
   useEffect(() => {
     if (choiceOne && choiceTwo) {
       setDisabled(true);
-      if (choiceOne.src == choiceTwo.src) {
+      if (choiceOne.src === choiceTwo.src) {
         setCards((prevCards) => {
           return prevCards.map((card) => {
-            if (card.src == choiceOne.src) {
+            if (card.src === choiceOne.src) {
               return { ...card, match: true };
             } else {
               return card;
@@ -78,7 +78,7 @@ function App() {
       <div className="card-grid">
         {cards.map((card) => (
           <SingleCard
-            flipped={card == choiceOne || card == choiceTwo || card.match}
+            flipped={card === choiceOne || card === choiceTwo || card.match}
             chooseCard={chooseCard}
             key={card.id}
             card={card}
